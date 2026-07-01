@@ -1,11 +1,1989 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>kanikaniworks</title>
 
-<Layout>
-	<Welcome />
-</Layout>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <header class="site-header">
+      <img class="logo" src="/images/logo_main.svg" alt="kanikaniworks">
+
+      <div class="header-divider"></div>
+<nav class="header-nav">
+  <div class="nav-works">
+    <a href="#works">
+      <img class="nav-img" src="/images/nav_works.svg" alt="works">
+    </a>
+<div class="works-expand">
+  <a href="#kaitei">
+    <img src="/images/nav_works1.svg" alt="海底あるある">
+  </a>
+
+  <a href="#akutan">
+    <img src="/images/nav_works2.svg" alt="アクタンモクタン">
+  </a>
+
+  <a href="#emaki">
+    <img src="/images/nav_works3.svg" alt="i-絵巻桃太郎">
+  </a>
+</div>
+  </div>
+
+  <a href="#about"><img class="nav-img" src="/images/nav_about.svg" alt="about"></a>
+    <a href="#news"><img class="nav-img" src="/images/nav_news.svg" alt="news"></a>
+  <a href="#contact"><img class="nav-img" src="/images/nav_contact.svg" alt="contact"></a>
+  <a href="https://note.com/kanitamaj" target="_blank" rel="noopener noreferrer"><img class="nav-img sns-img" src="/images/nav_note.svg" alt="note"></a>
+  <a href="https://www.tiktok.com/@kanikaniworks" target="_blank" rel="noopener noreferrer"><img class="nav-img sns-img" src="/images/nav_tiktok.svg" alt="TikTok"></a>
+  <a href="https://www.instagram.com/kanikaniworks/" target="_blank" rel="noopener noreferrer"><img class="nav-img sns-img" src="/images/nav_insta.svg" alt="Instagram"></a>
+</nav>
+<button class="mobile-menu-button" type="button" aria-label="もくじを開く">
+  <img src="/images/nav_mokuji.svg" alt="もくじ">
+</button>
+
+<nav class="mobile-menu" aria-hidden="true">
+  <button class="mobile-menu-close" type="button">×</button>
+
+ <a href="#works">
+  <img src="/images/nav_works.svg" alt="せいさくぶつ">
+</a>
+
+<a class="mobile-sub" href="#kaitei">
+  <img src="/images/nav_works1.svg" alt="海底あるある">
+</a>
+
+<a class="mobile-sub" href="#akutan">
+  <img src="/images/nav_works2.svg" alt="アクタンモクタン">
+</a>
+
+<a class="mobile-sub" href="#emaki">
+  <img src="/images/nav_works3.svg" alt="i-絵巻桃太郎">
+</a>
+
+<a href="#about">
+  <img src="/images/nav_about.svg" alt="ごあいさつ">
+</a>
+
+<a href="#news">
+  <img src="/images/nav_news.svg" alt="おしらせ">
+</a>
+
+<a href="#contact">
+  <img src="/images/nav_contact.svg" alt="おといあわせ">
+</a>
+<div class="mobile-sns">
+<a href="https://note.com/kanitamaj" target="_blank" rel="noopener noreferrer">
+  <img src="/images/nav_note.svg" alt="note">
+</a>
+
+<a href="https://www.tiktok.com/@kanikaniworks" target="_blank" rel="noopener noreferrer">
+  <img src="/images/nav_tiktok.svg" alt="TikTok">
+</a>
+
+<a href="https://www.instagram.com/kanikaniworks/" target="_blank" rel="noopener noreferrer">
+  <img src="/images/nav_insta.svg" alt="Instagram">
+</a>
+</div>
+</nav>
+
+    </header>
+
+    <main>
+      <div class="book">
+        <img class="left-wave" src="/images/wave-left.svg" />
+
+        <section class="page blue">
+        <section id="kaitei">
+   <div class="info-card-wrap">
+  <div class="card-image-box">
+    <img class="card-image"
+         src="/images/01_arar_copy.png"
+         alt="イカとタコ">
+
+    <div class="bubbles">
+      <span class="bubble b1"></span>
+      <span class="bubble b2"></span>
+      <span class="bubble b3"></span>
+    </div>
+  </div>
+</div>
+
+          <div class="info-card" style="--title-color: var(--accent-blue);">
+            <div class="info-card-title">
+              <img src="/images/01_arar_title.png" alt="海底あるある">
+            </div>
+
+            <div class="info-card-body">
+            <img
+               class="info-card-illust"
+               src="/images/01_manbo.png"
+              alt="マンボウ">
+              <div class="info-card-text">
+                <p>知る人ぞ知る？平成のゆる〜い４コマのショートアニメ版</p>
+              </div>
+            </div>
+
+            <div class="accordion">
+              <button class="accordion-trigger" type="button">海底あるあるって何？</button>
+              <div class="accordion-content">
+              <div class="accordion-content-inner">
+                <div class="info-card-text">
+                  <p>2010年に４コマ漫画アプリとして誕生し、21万ダウンロードしてもらって、宝島社から書籍も出版されましたが、アプリの仕様変更で更新の仕方がわからなくなり15年…。このたびちょっぴり令和仕様のショートアニメとして帰ってきました。</p>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion">
+              <button class="accordion-trigger" type="button">キャラクター紹介</button>
+              <div class="accordion-content">
+              <div class="accordion-content-inner">
+                 <div class="character-slider">
+
+      <section class="character-slide">
+        <img src="/images/chara01.png" alt="ヘコアユ">
+        <h3>ヘコアユ</h3>
+        <p>いつもヘコヘコしている</p>
+      </section>
+
+      <section class="character-slide">
+        <img src="/images/chara02.png" alt="タコとイカ">
+        <h3>タコとイカ</h3>
+        <p>常にどうでもいい会話をする</p>
+      </section>
+
+      <section class="character-slide">
+        <img src="/images/chara03.png" alt="ホラ夫">
+        <h3>ホラ夫</h3>
+        <p>なにを言ってもホラと思われる</p>
+      </section>
+
+      <section class="character-slide">
+        <img src="/images/chara04.png" alt="マンボウさん">
+        <h3>マンボウさん</h3>
+        <p>天然に見えてわりとこずるい</p>
+      </section>
+      
+      <section class="character-slide">
+        <img src="/images/chara05.png" alt="ノウサンゴ">
+        <h3>ノウサンゴ</h3>
+        <p>考えごとをしてると思われがち</p>
+      </section>
+      
+      <section class="character-slide">
+        <img src="/images/chara06.png" alt="ハリセン子">
+        <h3>ハリセン子</h3>
+        <p>針を出さないと気づかれない</p>
+      </section>
+      
+      <section class="character-slide">
+        <img src="/images/chara07.png" alt="チンアナゴ兄弟">
+        <h3>チンアナゴ兄弟</h3>
+        <p>穴にこもってグチるのが好き</p>
+      </section>
+      
+      <section class="character-slide">
+        <img src="/images/chara08.png" alt="ウミシダ">
+        <h3>ウミシダ</h3>
+        <p>カン違いで突っ走るお調子もの</p>
+      </section>
+      
+      <section class="character-slide">
+        <img src="/images/chara09.png" alt="ジンベエCEO">
+        <h3>ジンベエCEO</h3>
+        <p>気前はいいがおっちょこちょい</p>
+      </section>
+      
+      <section class="character-slide">
+        <img src="/images/chara10.png" alt="ヒラメくん">
+        <h3>ヒラメくん</h3>
+        <p>平べったい体で苦労しがち</p>
+      </section>
+      
+      <section class="character-slide">
+        <img src="/images/chara11.png" alt="エチゼン奉行">
+        <h3>エチゼン奉行</h3>
+        <p>とても大雑把なお裁きをする</p>
+      </section>
+      
+      <section class="character-slide">
+        <img src="/images/chara12.png" alt="ハルキゲニア">
+        <h3>ハルキゲニア</h3>
+        <p>ハルキ構文でつぶやきがち</p>
+      </section>
+      
+
+    </div>
+     </div>
+              </div>
+            </div>
+
+            <div class="accordion is-open">
+              <button class="accordion-trigger" type="button">ショートアニメを見る</button>
+              <div class="accordion-content">
+              <div class="accordion-content-inner">
+             <div class="button-area">
+  <a
+  class="button"
+  href="https://www.tiktok.com/@kanikaniworks"
+  target="_blank"
+  rel="noopener noreferrer"
+  style="
+    --button-bg: var(--accent-blue);
+    --button-hover: var(--blue);
+  "
+>
+     <span>TikTok</span>
+  </a>
+  <p class="button-note">TikTokにて毎週木曜配信中です</p>
+</div>
+              </div>
+              </div>
+            </div>
+          </div>
+           <div class="kani kani-left">            <div class="kani-bubbles">
+    <span class="bubble b1"></span>
+    <span class="bubble b2"></span>
+  </div></div>
+ </section>
+        </section>
+        <section class="page gray">
+        <section id="akutan">
+   <div class="info-card-wrap">
+  <div class="card-image-box">
+    <img class="card-image"
+         src="/images/02_akmk_copy.png"
+         alt="折れたマッチ">
+
+
+  </div>
+</div>
+
+          <div class="info-card" style="--title-color: var(--accent-gray);">
+            <div class="info-card-title">
+              <img src="/images/02_akmk_title.png" alt="アクタンモクタン">
+            </div>
+
+            <div class="info-card-body">
+            <img
+               class="info-card-illust"
+               src="/images/02_ninjin.png"
+              alt="にんじんのきれっぱし">
+              <div class="info-card-text">
+                <p>21の個性的なゴミキャラたちによる短歌とイラストの絵本</p>
+              </div>
+            </div>
+
+            <div class="accordion">
+              <button class="accordion-trigger" type="button">アクタンモクタンって何？</button>
+              <div class="accordion-content">
+              <div class="accordion-content-inner">
+                <div class="info-card-text">
+                  <p>おれたマッチ、にんじんのきれっぱし、ごみばこのティッシュ…。捨てられたゴミたちによる小さな短歌の絵本ZINEです。沖縄の一部書店で取り扱いいただいています。</p>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion">
+              <button class="accordion-trigger" type="button">ちょっと試し読み</button>
+              <div class="accordion-content">
+              <div class="accordion-content-inner">
+                 <div class="character-slider">
+
+      <section class="character-slide">
+        <img src="/images/akmk01.png" alt="表紙">
+        <p>表紙</p>
+      </section>
+
+      <section class="character-slide">
+        <img src="/images/akmk02.png" alt="裏表紙">
+        <p>裏表紙</p>
+      </section>
+
+      <section class="character-slide">
+        <img src="/images/akmk03.png" alt="中ページ">
+        <p>中ページ</p>
+      </section>
+
+      <section class="character-slide">
+        <img src="/images/akmk04.png" alt="マンボウさん">
+        <p>中ページ</p>
+      </section>
+      
+      <section class="character-slide">
+        <img src="/images/akmk05.png" alt="しおり">
+        <p>しおり（おまけ）</p>
+      </section>
+      
+      <section class="character-slide">
+        <img src="/images/akmk06.png" alt="にんじんのきれっぱし">
+        <p>にんじんのきれっぱし</p>
+      </section>
+      
+      <section class="character-slide">
+        <img src="/images/akmk07.png" alt="ごみばこのティッシュ">
+        <p>ごみばこのティッシュ</p>
+      </section>
+      
+      <section class="character-slide">
+        <img src="/images/akmk08.png" alt="まがったくぎ">
+        <p>まがったくぎ</p>
+      </section>
+      
+      <section class="character-slide">
+        <img src="/images/akmk09.png" alt="とれたシャツのボタン">
+        <p>とれたシャツのボタン</p>
+      </section>
+      
+      <section class="character-slide">
+        <img src="/images/akmk10.png" alt="きれたでんきゅう">
+        <p>きれたでんきゅう</p>
+      </section>
+      
+      <section class="character-slide">
+        <img src="/images/akmk11.png" alt="とんでったコルクせん">
+        <p>とんでったコルクせん</p>
+      </section>
+      
+      <section class="character-slide">
+        <img src="/images/akmk12.png" alt="そらにまうレジぶくろ">
+        <p>そらにまうレジぶくろ</p>
+      </section>
+      
+
+    </div>
+     </div>
+              </div>
+            </div>
+                 <div class="accordion">
+              <button class="accordion-trigger" type="button">掲載・出展</button>
+              <div class="accordion-content">
+              <div class="accordion-content-inner center-content">
+                
+                  <p>琉球新報（2025.10.23）</p>
+                  <p>文学フリマ東京（2026.5.4）</p>
+                  <p>ZINEフェス沖縄（2026.6.21）</p>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion is-open">
+              <button class="accordion-trigger" type="button">お取り扱い</button>
+              <div class="accordion-content">
+              <div class="accordion-content-inner center-content">
+              
+                 
+                  <p>古書ラテラ舎</p>
+<p>くじらブックス＆Zou Cafe</p>
+<p>本と商い ある日、 </p>
+<p>沖縄県立図書館</p>  </div>
+ <div class="sub-note">
+    お取り扱いいただける店舗を募集しています。
+    お気軽にお問い合わせください。
+  </div>
+            
+            
+                              
+              </div>
+            </div>
+          </div>
+           <div class="kani kani-right">           </div>
+ </section>
+        </section>
+<section class="page pink">
+<section id="emaki">
+   <div class="info-card-wrap">
+  <div class="card-image-box">
+    <img class="card-image"
+         src="/images/03_mmtr_copy.png"
+         alt="桃太郎">
+
+   
+  </div>
+</div>
+
+          <div class="info-card" style="--title-color: var(--accent-pink);">
+            <div class="info-card-title">
+              <img src="/images/03_mmtr_title.png" alt="i-絵巻 桃太郎">
+            </div>
+
+            <div class="info-card-body">
+            <img
+               class="info-card-illust"
+               src="/images/03_momotaro.png"
+              alt="桃太郎顔">
+              <div class="info-card-text">
+                <p>１枚のながーーい絵でできた、ちょっと新しい桃太郎</p>
+              </div>
+            </div>
+
+            <div class="accordion">
+              <button class="accordion-trigger" type="button">i-絵巻 桃太郎って何？</button>
+              <div class="accordion-content">
+              <div class="accordion-content-inner">
+                <div class="info-card-text">
+                  <p>おなじみのストーリーをベースに、鬼ってほんとうに悪者？という「もしも」を描いた、デジタル絵巻の新しい桃太郎です。Amazon KDPにてリリース中。</p>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion">
+              <button class="accordion-trigger" type="button">i-絵巻を試し読み</button>
+              <div class="accordion-content">
+              <div class="accordion-content-inner">
+                 <div class="character-slider reverse-slider">
+
+      <section class="character-slide">
+        <img src="/images/momo01.jpg" alt="桃太郎1">
+   
+      </section>
+
+      <section class="character-slide">
+        <img src="/images/momo02.jpg" alt="桃太郎2">
+ 
+      </section>
+
+      <section class="character-slide">
+        <img src="/images/momo03.jpg" alt="桃太郎3">
+ 
+      </section>
+
+      <section class="character-slide">
+        <img src="/images/momo04.jpg" alt="桃太郎4">
+
+      </section>
+      
+      <section class="character-slide">
+        <img src="/images/momo05.jpg" alt="桃太郎5">
+   
+      </section>
+        <section class="character-slide">
+        <img src="/images/momo06.jpg" alt="桃太郎6">
+   
+      </section>
+            <section class="character-slide">
+        <img src="/images/momo07.jpg" alt="桃太郎7">
+   
+      </section>
+      
+    
+      
+
+    </div>
+     </div>
+              </div>
+            </div>
+
+            <div class="accordion is-open">
+              <button class="accordion-trigger" type="button">i-絵巻 桃太郎を読む</button>
+              <div class="accordion-content">
+              <div class="accordion-content-inner">
+             <div class="button-area">
+ <a
+  class="button"
+  href="https://amzn.asia/d/02bvnvUz"
+  target="_blank"
+  rel="noopener noreferrer"
+  style="
+    --button-bg: var(--accent-pink);
+    --button-hover: var(--pink);
+  "
+>
+     <span>Amazon KDP</span>
+  </a>
+  <p class="button-note">unlimitedなら無料・英語版もあり</p>
+</div>
+              </div>
+              </div>
+            </div>
+          </div>
+           <div class="kani kani-left">            </div>
+ </section>
+        </section>
+
+
+
+<section class="page beige">
+   <div  id="about" class="info-card-wrap">
+  <div class="card-image-box">
+    <img class="card-image"
+         src="/images/04_knkn_copy.png"
+         alt="カニカニワークス">
+
+   
+  </div>
+</div>
+
+          <div class="info-card" style="--title-color: var(--accent-beige);">
+            <div class="info-card-title">
+              <img src="/images/04_knkn_title.png" alt="カニカニワークス">
+            </div>
+
+            <div class="info-card-body">
+            <img
+               class="info-card-illust info-card-illust-full"
+               src="/images/04_juneyasu.png"
+              alt="JUNEYASU">
+              <div class="info-card-text">
+                <p>ちょっとゆるくてジワッとするものをつくる、沖縄の夫婦ユニット</p>
+              </div>
+            </div>
+
+            <div class="accordion">
+              <button class="accordion-trigger" type="button">カニカニワークスって何？</button>
+              <div class="accordion-content">
+              <div class="accordion-content-inner">
+                <div class="info-card-text">
+                  <p>カニカニワークスは2010年に結成した、元書店員の二人による沖縄在住の夫婦ユニットです。JUNEはクリエイティブ担当、YASUはナレッジ担当、ちょっとゆるくて、ちょっとヘンで、ちょっとジンワリ考えちゃう。そんな作品をつくっています。</p>
+                </div>
+                </div>
+              </div>
+            </div>
+     <div class="accordion">
+              <button class="accordion-trigger" type="button">制作内容</button>
+              <div class="accordion-content">
+              <div class="accordion-content-inner center-content">
+                
+                  <p>絵本</p>
+                  <p>マンガ</p>
+                  <p>４コママンガ</p>
+                  <p>エッセイ</p>
+                  <p>イラスト</p>
+                   <p>キャラクター</p>
+                   <p>短歌</p>
+                   <p>番組企画</p>
+<p>広告動画</p>
+                </div>
+              </div>
+            </div>
+
+         
+ <div id="news" class="accordion is-open">
+  <button class="accordion-trigger" type="button">おしらせ</button>
+
+  <div class="accordion-content">
+    <div class="accordion-content-inner">
+
+      <div class="news-item">
+        <p class="news-date">2026.07.01</p>
+        <p class="news-text">海底あるある ショートアニメ第1話を公開しました！</p>
+      </div>
+
+      <div class="news-item">
+        <p class="news-date">2026.06.21</p>
+        <p class="news-text">ZINEフェス沖縄に出展しました。ありがとうございました！</p>
+      </div>
+
+   
+
+    </div>
+  </div>
+</div>
+
+    
+
+   
+            <div id="contact" class="accordion is-open">
+              <button class="accordion-trigger" type="button">おといあわせ</button>
+              <div class="accordion-content">
+              <div class="accordion-content-inner">
+             <div class="button-area">
+ <a
+  class="button"
+  href="https://forms.gle/K2hn9aCvQXWFzJXo8"
+  target="_blank"
+  rel="noopener noreferrer"
+  style="
+    --button-bg: var(--accent-beige);
+    --button-hover: var(--beige);
+  "
+>
+     <span>お問い合せ</span>
+  </a>
+   <p class="button-note">お仕事のお問い合せや質問はこちら</p>
+</div>
+<div style="height:12px;"></div>
+           <div class="button-area">
+ <a
+  class="button"
+  href="https://forms.gle/mgT6sTmGxif5fLst8"
+  target="_blank"
+  rel="noopener noreferrer"
+  style="
+    --button-bg: var(--accent-beige);
+    --button-hover: var(--beige);
+  "
+>
+     <span>メッセージ</span>
+  </a>
+  <p class="button-note">作品のご感想などメッセージはこちら</p>
+</div>
+              </div>
+              </div>
+            </div>
+          </div>
+          
+
+        </section>
+
+
+
+        <img class="right-wave" src="/images/wave-right.svg" />
+      </div>
+    </main>
+
+    <footer class="site-footer">
+<nav class="header-nav footer-nav">
+  <div class="nav-works">
+    <a href="#works">
+      <img class="nav-img" src="/images/nav_works.svg" alt="works">
+    </a>
+<div class="works-expand footer-works-expand">
+  <a href="#kaitei">
+    <img src="/images/nav_works1.svg" alt="海底あるある">
+  </a>
+
+  <a href="#akutan">
+    <img src="/images/nav_works2.svg" alt="アクタンモクタン">
+  </a>
+
+  <a href="#emaki">
+    <img src="/images/nav_works3.svg" alt="i-絵巻桃太郎">
+  </a>
+</div>
+  </div>
+
+  <a href="#about"><img class="nav-img" src="/images/nav_about.svg" alt="about"></a>
+    <a href="#news"><img class="nav-img" src="/images/nav_news.svg" alt="news"></a>
+  <a href="#contact"><img class="nav-img" src="/images/nav_contact.svg" alt="contact"></a>
+  <a href="https://note.com/kanitamaj" target="_blank" rel="noopener noreferrer"><img class="nav-img sns-img" src="/images/nav_note.svg" alt="note"></a>
+  <a href="https://www.tiktok.com/@kanikaniworks" target="_blank" rel="noopener noreferrer"><img class="nav-img sns-img" src="/images/nav_tiktok.svg" alt="TikTok"></a>
+  <a href="https://www.instagram.com/kanikaniworks/" target="_blank" rel="noopener noreferrer"><img class="nav-img sns-img" src="/images/nav_insta.svg" alt="Instagram"></a>
+</nav>
+<div class="header-divider"></div>
+
+      <p class="copyright">©kanikaniworks2010-2026</p>
+      <a class="footer-top-button" href="#" aria-label="トップへ戻る">
+  <img src="/images/nav_top.svg" alt="トップへ戻る">
+</a>
+    </footer>
+  </body>
+</html>
+
+<script>
+  const accordions = document.querySelectorAll(".accordion");
+
+  accordions.forEach((accordion, index) => {
+    const trigger = accordion.querySelector(".accordion-trigger");
+    const content = accordion.querySelector(".accordion-content");
+
+    if (!trigger || !content) return;
+
+    const contentId = `accordion-content-${index + 1}`;
+    content.id = contentId;
+    trigger.setAttribute("aria-controls", contentId);
+    trigger.setAttribute("aria-expanded", accordion.classList.contains("is-open") ? "true" : "false");
+
+
+    trigger.addEventListener("click", () => {
+      const isOpen = accordion.classList.contains("is-open");
+
+      if (isOpen) {
+        content.style.maxHeight = `${content.scrollHeight}px`;
+
+        requestAnimationFrame(() => {
+          accordion.classList.remove("is-open");
+          trigger.setAttribute("aria-expanded", "false");
+          content.style.maxHeight = "0px";
+        });
+
+        return;
+      }
+
+accordion.classList.add("is-open");
+trigger.setAttribute("aria-expanded", "true");
+
+content.style.maxHeight = `${content.scrollHeight}px`;
+
+requestAnimationFrame(() => {
+  content.style.maxHeight = `${content.scrollHeight}px`;
+});
+
+
+    });
+
+    
+  });
+const mobileMenuButton = document.querySelector(".mobile-menu-button");
+const mobileMenu = document.querySelector(".mobile-menu");
+const mobileMenuClose = document.querySelector(".mobile-menu-close");
+
+if (mobileMenuButton && mobileMenu && mobileMenuClose) {
+  const openMenu = () => {
+    mobileMenu.classList.add("is-open");
+    mobileMenu.setAttribute("aria-hidden", "false");
+    mobileMenuButton.setAttribute("aria-expanded", "true");
+  };
+
+  const closeMenu = () => {
+    mobileMenu.classList.remove("is-open");
+    mobileMenu.setAttribute("aria-hidden", "true");
+    mobileMenuButton.setAttribute("aria-expanded", "false");
+  };
+
+  mobileMenuButton.addEventListener("click", () => {
+    if (mobileMenu.classList.contains("is-open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  mobileMenuClose.addEventListener("click", closeMenu);
+
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+}
+</script>
+
+<style>
+  /* ==================================================
+    Base
+  ================================================== */
+
+  * {
+    box-sizing: border-box;
+  }
+
+  :root {
+    --font-title: "Zen Maru Gothic", sans-serif;
+    --font-body: "Noto Sans JP", sans-serif;
+
+    --ink: #333;
+    --paper: #e1e2de;
+    --white: #fff;
+
+    --blue: #78c3cc;
+    --gray: #cbc9bf;
+    --pink: #c9c1c1;
+    --beige: #c8ceb7;
+    --green: #a8c9a0;
+    --accent-blue: #43b8c5;
+    --accent-gray: #c1bdb6;
+    --accent-pink: #c4a5b2;
+    --accent-beige: #b7bca4;
+
+
+
+    --scrollbar-track: #ececec;
+    --scrollbar-thumb: #bdbdbd;
+
+    --line: 1px solid var(--ink);
+    --dash-border: 1px dashed var(--ink);
+    --dash-line:
+      repeating-linear-gradient(
+        to right,
+        var(--ink) 0 8px,
+        transparent 8px 10px
+      );
+
+    --nav-lift: -3px;
+    --subnav-lift: -1px;
+    --hover-lift: -2px;
+
+    --card-width: 375px;
+    --card-radius: 30px;
+    --card-inner-radius: 20px;
+    --card-side-padding: 50px;
+    --card-body-padding-y: 25px;
+
+    --card-text-size: 15px;
+    --card-text-line-height: 2.5;
+    --card-text-letter-spacing: 0.1em;
+
+    --accordion-speed: 0.45s;
+    --accordion-ease: ease;
+
+    --wave-width: 80px;
+    --kani-size: 60px;
+
+      --nav-height: 23px;
+  --subnav-height: 18px;
+  }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* ==================================================
+    Header
+  ================================================== */
+
+  .site-header {
+    position: relative;
+    text-align: center;
+    padding-top: 10px;
+    z-index: 200;
+    overflow: visible;
+  }
+
+  .logo {
+    display: block;
+    width: 45%;
+    max-width: 450px;
+    min-width: 290px;
+    margin: 10px auto 0;
+  }
+
+  .header-divider {
+    height: 1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: var(--dash-line);
+  }
+
+  .header-nav {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(10px, 4vw, 20px);
+    width: 40%;
+    max-width: 500px;
+    min-width: 320px;
+    margin: 0 auto 20px;
+    overflow: visible;
+  }
+
+  .header-nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+  }
+
+  .header-nav img.nav-img,
+  .header-nav img.sns-img {
+    width: auto !important;
+    height: var(--nav-height);
+    transition: transform 0.18s ease;
+  }
+
+  .header-nav a:hover img,
+  .header-nav a:focus-visible img,
+  .nav-works:hover .nav-img {
+    transform: translateY(var(--nav-lift));
+  }
+
+  /* ==================================================
+    Works submenu
+  ================================================== */
+
+  .nav-works {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .nav-works::after {
+    content: "";
+    position: absolute;
+    left: -50vw;
+    right: -50vw;
+    top: 100%;
+    height: 28px;
+  }
+
+  .works-expand {
+  position: absolute;
+  left: calc(50% + 250px);
+  top: calc(100% + 20px);
+  transform: translateX(calc(-50%));
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+
+  width: 100vw;
+  height: 0;
+  overflow: hidden;
+
+  background:
+    var(--dash-line) top / 100% 1px no-repeat,
+    var(--paper);
+  border-bottom: var(--line);
+
+  opacity: 0;
+  pointer-events: none;
+  z-index: 300;
+
+  transition:
+    height 0.25s ease,
+    opacity 0.2s ease;
+}
+
+.nav-works:hover .works-expand,
+.works-expand:hover {
+  height: 52px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.works-expand a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.18s ease;
+   transform: translateX(-80px);
+}
+
+.works-expand a:hover,
+.works-expand a:focus-visible {
+   transform: translateX(-80px) translateY(var(--subnav-lift));
+}
+
+.works-expand img {
+  display: block;
+   height: var(--subnav-height);
+  width: auto;
+}
+
+  /* ==================================================
+    Layout
+  ================================================== */
+
+  .book {
+    position: relative;
+    border-top: var(--line);
+  }
+
+  .page {
+    min-height: 700px;
+    position: relative;
+  }
+
+  .page::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: var(--dash-line);
+  }
+
+.page:last-of-type::after {
+  display: none;
+}
+
+  .blue {
+    background: var(--blue);
+    padding-bottom: 110px;
+  }
+
+  .gray {
+    background: var(--gray);
+   padding-bottom: 110px;
+  }
+
+    .pink {
+    background: var(--pink);
+   padding-bottom: 110px;
+  }
+
+    .beige{
+    background: var(--beige);
+   padding-bottom: 110px;
+  }
+
+
+  .green {
+    background: var(--green);
+     padding-bottom: 110px;
+  }
+
+  .left-wave,
+.right-wave {
+  position: absolute;
+  top: 0;
+  width: var(--wave-width);
+  height: 100%;
+  object-fit: cover;
+  z-index: 30;
+  pointer-events: none;
+}
+
+  .left-wave {
+    left: 0;
+  }
+
+  .right-wave {
+    right: 0;
+  }
+
+
+
+  /* ==================================================
+    Main image and bubbles
+  ================================================== */
+
+  .info-card-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-image-box {
+    position: relative;
+    width: 350px;
+    margin-top: 40px;
+    margin-bottom: -57px;
+    z-index: 10;
+  }
+
+  .card-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .bubbles {
+    position: absolute;
+    left: 52%;
+    top: 12%;
+    pointer-events: none;
+  }
+
+  .bubble {
+    position: absolute;
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    background: var(--white);
+    animation: bubbleFloat 1.7s ease-in-out infinite;
+  }
+
+  .b1 {
+    width: 14px;
+    height: 14px;
+    left: 0;
+    top: 0;
+  }
+
+  .b2 {
+    width: 10px;
+    height: 10px;
+    left: 10px;
+    top: 25px;
+    animation-delay: 0.3s;
+  }
+
+  .b3 {
+    width: 6px;
+    height: 6px;
+    left: 30px;
+    top: 38px;
+    animation-delay: 0.6s;
+  }
+
+  @keyframes bubbleFloat {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-2px);
+    }
+  }
+
+  /* ==================================================
+    Info card
+  ================================================== */
+
+  .info-card {
+    position: relative;
+    width: var(--card-width);
+    max-width: 92%;
+    margin: 0 auto;
+    border: var(--line);
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    background: var(--paper);
+    color: var(--ink);
+    transform: translateY(30px);
+  }
+
+  .info-card::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    top: 88px;
+    bottom: 18px;
+    border-left: var(--dash-border);
+    border-right: var(--dash-border);
+    border-bottom: var(--dash-border);
+    border-radius: 0 0 var(--card-inner-radius) var(--card-inner-radius);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .info-card-title,
+  .info-card-body,
+  .accordion {
+    position: relative;
+    z-index: 2;
+  }
+
+  .info-card-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 10px;
+    background: var(--title-color);
+    border-bottom: var(--line);
+  }
+
+  .info-card-title img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .info-card-body {
+    padding: var(--card-body-padding-y) var(--card-side-padding);
+    border-bottom: var(--line);
+  }
+
+  .info-card-illust {
+    display: block;
+    width: 70%;
+    height: auto;
+    margin: -10px auto 20px;
+  }
+
+  .info-card-illust-full {
+  width: 100%;
+}
+
+  .info-card-text {
+    max-width: 26em;
+    margin: 0 auto;
+  }
+
+  .info-card-text p {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: var(--card-text-size);
+    line-height: var(--card-text-line-height);
+    letter-spacing: var(--card-text-letter-spacing);
+    text-align: justify;
+    text-align-last: left;
+  }
+
+  /* ==================================================
+    Accordion - JS version
+  ================================================== */
+
+  .accordion {
+    border-bottom: var(--line);
+  }
+
+  .accordion:last-child {
+    border-bottom: none;
+    padding-bottom: 25px;
+  }
+
+  .accordion-trigger {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 20px 30px;
+
+    border: none;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+
+    text-align: center;
+    font-family: var(--font-title);
+    font-size: clamp(18px, 3vw, 20px);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  .accordion-trigger::before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    width: 24px;
+    height: 24px;
+    margin-right: 0.4em;
+    background-image: url("/images/scissors.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    vertical-align: middle;
+    transition: transform 0.2s ease;
+  }
+
+  .accordion.is-open .accordion-trigger::before {
+    transform: rotate(90deg);
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 var(--card-side-padding);
+    opacity: 0;
+    transition:
+      max-height var(--accordion-speed) var(--accordion-ease),
+      opacity 0.25s ease,
+      padding-bottom var(--accordion-speed) var(--accordion-ease);
+  }
+
+  .accordion-content-inner {
+  padding-bottom: 30px;
+}
+
+.accordion-content.is-initializing {
+  transition: none;
+}
+
+  .accordion.is-open .accordion-content {
+   max-height: 1000px;
+    opacity: 1;
+  }
+
+  .accordion-content p {
+    margin: 0;
+    font-family: var(--font-body);
+  }
+
+  /* ==================================================
+    Character slider
+  ================================================== */
+
+  .character-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 10px 0 20px;
+  }
+
+  .character-slide {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    text-align: center;
+  }
+
+  .character-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto ;
+  }
+
+  .character-slide h3 {
+    margin: 0 0 8px;
+    font-family: var(--font-title);
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.06em;
+  }
+
+  .character-slide p {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    text-align: center !important;
+  }
+
+  .character-slider::-webkit-scrollbar {
+    height: 12px;
+  }
+
+  .character-slider::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+    border-radius: 999px;
+  }
+
+  .character-slider::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 999px;
+  }
+
+  .reverse-slider {
+  direction: rtl;
+  gap: 0;
+
+}
+
+  /* ==================================================
+    Button
+  ================================================== */
+
+  .button-area {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  max-width: 100%;
+  padding: 10px;
+
+  border: var(--line);
+  border-radius: 999px;
+  background: var(--button-bg);
+  color: var(--white);
+
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  line-height: 1;
+
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease;
+}
+
+.button span {
+  position: relative;
+  top: -2px;
+}
+
+.button:hover {
+  background: var(--button-hover);
+  transform: translateY(var(--hover-lift));
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+
+
+.button-area .button-note {
+  margin: 10px 0 0;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+
+
+/* ==================================================
+   Utility
+================================================== */
+
+.center-content {
+  text-align: center;
+}
+
+.center-content p {
+  margin: 0 0 3px;
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.sub-note {
+  width: fit-content;
+   margin-top: -18px;
+  margin-right: auto;
+  margin-bottom: 30px;
+  margin-left: auto;
+
+  font-size: 12px;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+  text-align: left;
+  text-align: justify;
+}
+
+.bottom-spacer {
+  height: 100px;
+}
+
+ /* ==================================================
+   Walking crab
+================================================== */
+
+.kani {
+  position: absolute;
+  width: var(--kani-size);
+  height: var(--kani-size);
+  bottom: -25px;
+
+  background: url("/images/kani_walk1.svg") center / contain no-repeat;
+
+  z-index: 20;
+  pointer-events: auto;
+}
+
+.kani-left {
+  animation:
+    kaniWalkLeft 40s linear infinite,
+    kaniStep 0.6s steps(1) infinite;
+}
+
+.kani-right {
+  transform: scaleX(-1);
+  animation:
+    kaniWalkRight 40s linear infinite,
+    kaniStep 0.6s steps(1) infinite;
+}
+
+.kani:hover {
+  animation-play-state: paused;
+}
+
+.kani-left:hover {
+  transform: scale(0.9);
+}
+
+.kani-right:hover {
+  transform: scaleX(-1) scale(0.9);
+}
+
+.kani-bubbles {
+  position: absolute;
+  left: var(--kani-size);
+  top: -10px;
+  transform: scale(0.7) scaleX(-1);
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+@keyframes kaniWalkLeft {
+  0% {
+    left: calc(100% - 35px);
+    opacity: 1;
+  }
+
+  86% {
+    left: -15px;
+    opacity: 1;
+  }
+
+  87% {
+    left: -15px;
+    opacity: 0;
+  }
+
+  99% {
+    left: calc(100% - 35px);
+    opacity: 0;
+  }
+
+  100% {
+    left: calc(100% - 35px);
+    opacity: 1;
+  }
+}
+
+@keyframes kaniWalkRight {
+  0% {
+    left: -15px;
+    opacity: 1;
+  }
+
+  86% {
+    left: calc(100% - 35px);
+    opacity: 1;
+  }
+
+  87% {
+    left: calc(100% - 35px);
+    opacity: 0;
+  }
+
+  99% {
+    left: -15px;
+    opacity: 0;
+  }
+
+  100% {
+    left: -15px;
+    opacity: 1;
+  }
+}
+
+@keyframes kaniStep {
+  0%,
+  49% {
+    background-image: url("/images/kani_walk1.svg");
+  }
+
+  50%,
+  100% {
+    background-image: url("/images/kani_walk2.svg");
+  }
+}
+
+/* ==================================================
+   News
+================================================== */
+
+.news-item {
+  margin-bottom: 20px;
+}
+
+.news-item:last-child {
+  margin-bottom: 0;
+}
+
+.news-date {
+  margin: 0 0 4px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-align: left;
+}
+
+.news-text {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.8;
+  letter-spacing: 0.06em;
+  text-align: left;
+}
+
+ /* ==================================================
+   Footer
+================================================== */
+
+.site-footer {
+  position: relative;
+  z-index: 100;
+  padding: 36px 0 40px;
+  border-top: var(--line);
+  text-align: center;
+  background: var(--paper);
+}
+
+.site-footer nav {
+  margin-bottom: 24px;
+}
+
+.site-footer p {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+}
+
+.copyright {
+  margin: 50px 0 0;
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.site-footer .nav-works {
+  position: static;
+}
+
+/* 透明な橋 */
+.site-footer .nav-works::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -90px;
+  height: 90px;
+}
+.site-footer .footer-works-expand::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: #333;
+  z-index: 1;
+}
+.site-footer .footer-works-expand {
+  position: absolute;
+  left: 50% !important;
+  top: -72px;
+  transform: translate(-50%, 10px);
+  width: 100vw;
+  height: 52px;
+  overflow: visible;
+
+  background:
+    #333 top / 100% 1px no-repeat,
+    var(--paper);
+
+  border-bottom: none;
+
+  opacity: 0;
+  pointer-events: none;
+  z-index: 101;
+
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+
+      background: var(--paper);
+
+}
+
+.site-footer .nav-works:hover .footer-works-expand,
+.site-footer .footer-works-expand:hover {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+/* 下：点線 */
+.site-footer .footer-works-expand::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--dash-line);
+}
+.site-footer .footer-works-expand a {
+  transform: translateX(-90px);
+}
+
+.site-footer .footer-works-expand a:hover,
+.site-footer .footer-works-expand a:focus-visible {
+  transform: translateX(-90px) translateY(var(--subnav-lift));
+}
+
+  /* ==================================================
+    Responsive
+  ================================================== */
+.mobile-menu-button,
+.mobile-menu {
+  display: none;
+}
+.footer-menu-button {
+  display: none;
+}
+.footer-top-button {
+  display: none;
+}
+
+@media (max-width: 600px) {
+
+  :root {
+    --card-side-padding: 40px;
+    --card-text-size: 14px;
+    --card-text-line-height: 2.1;
+    --card-text-letter-spacing: 0.06em;
+  }
+  .mobile-menu-button,
+  .mobile-menu {
+    display: block;
+  }
+
+   
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+    .site-header {
+    padding-top: 4px;
+    position: sticky;
+    top: 0;
+    z-index: 600;
+    background: var(--paper);
+  }
+  
+  .logo {
+    margin-top: 10px;
+        width: 80%;
+    min-width: 220px;
+  }
+
+  .header-divider {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .left-wave,
+  .right-wave {
+    display: none;
+  }
+
+    .info-card {
+    max-width: 85%;
+  }
+
+    .info-card-title {
+    padding: 5px;
+  }
+ 
+   .card-image-box  {
+    margin-top: 20px;
+    width: 220px;
+    height: auto;
+    margin-bottom: -50px;
+  }
+  .card-image-box .b1 {
+    width: 10px;
+    height: 10px;
+    border-width: 0.9px;
+  }
+
+  .card-image-box .b2 {
+    width: 7px;
+    height: 7px;
+    left: 7px;
+    top: 18px;
+    border-width: 0.9px;
+  }
+
+  .card-image-box .b3 {
+    width: 4px;
+    height: 4px;
+    left: 21px;
+    top: 27px;
+    border-width: 0.9px;
+  }
+
+  .works-expand {
+    display: none;
+  }
+
+  .header-nav {
+    width: 90%;
+    min-width: 0;
+    gap: clamp(12px, 3vw, 24px);
+  }
+
+  .header-nav img.nav-img {
+    height: clamp(14px, 4vw, 22px) !important;
+  }
+    .header-nav {
+    display: none;
+  }
+
+  .info-card-illust {
+    width: 50%;
+    height: auto;
+  }
+
+  .info-card-illust-full {
+  width: 80%;
+}
+
+.mobile-menu-button {
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  z-index: 500;
+
+  width: 20px;
+  height: 60px;
+  padding: 0;
+
+  border: none;
+  border-radius: 6px 6px 0 0;
+  background: var(--ink);
+
+  display: grid;
+  place-items: center;
+}
+
+.mobile-menu-button img {
+  display: block;
+  width: 14px;
+  height: auto;
+  margin: 0;
+}
+  .mobile-menu img {
+  display: block;
+  height: 25px;
+  width: auto;
+
+  filter: brightness(0) invert(1);
+  opacity: .95;
+  transition: .15s ease;
+}
+
+.mobile-menu .mobile-sub img {
+  height: 17px;
+  width: auto;
+}
+
+.mobile-menu a:hover img {
+  opacity: .75;
+}
+
+  .mobile-menu {
+    position: absolute;
+    left: 0;
+    top: 72px;
+    z-index: 450;
+    width: 66vw;
+    max-width: 280px;
+    padding: 70px 28px 28px;
+    border-radius: 0 18px 18px 0;
+    background: rgba(20, 45, 47, 0.82);
+    color: var(--white);
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+  }
+
+  .mobile-menu.is-open {
+    transform: translateX(0);
+  }
+
+  .mobile-menu a {
+    display: block;
+    margin-bottom: 24px;
+  }
+
+    .mobile-menu a img {
+    display: block;
+    height: 24px;
+    width: auto;
+  }
+
+  .mobile-menu a.mobile-sub {
+    margin-left: 48px;
+    margin-bottom: 24px;
+        height: 20px;
+
+  }
+  .mobile-sns {
+  display: flex;
+  justify-content: left;
+
+  gap: 30px;
+
+  margin-top: 40px;
+  margin-left: 5px;
+}
+
+.mobile-sns a {
+  display: flex;
+}
+
+.mobile-sns img {
+  height: 20px;
+  width: auto;
+}
+
+  .character-slider::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 31px;
+  transform: translateX(-50%);
+  width: 235px;
+  height: 5px;
+  border-radius: 999px;
+
+  background: transparent; /* 塗りなし */
+  border:1px solid var(--scrollbar-thumb);    /* アウトラインだけ */
+  }
+  
+  .mobile-menu-close {
+    position: absolute;
+    right: 22px;
+    top: 22px;
+    border: none;
+    background: transparent;
+    color: var(--white);
+    font-size: 30px;
+    line-height: 1;
+  }
+.footer-top-button {
+  position: absolute;
+  right: 15px;
+  bottom: 33px;
+  z-index: 500;
+
+  width: 20px;
+  height: 60px;
+  padding: 0;
+
+  border: none;
+  border-radius: 0 0 6px 6px;
+  background: var(--ink);
+
+  display: grid;
+  place-items: center;
+}
+
+.footer-top-button img {
+  width: 14px;
+  height: auto;
+}
+
+ .site-footer {
+    padding-top: 5px;
+    padding-bottom: 30px;
+  }
+
+  .site-footer nav {
+    margin-bottom: 16px;
+  }
+
+  .copyright {
+    margin-top: 32px;
+  }
+
+
+}
+
+</style>
