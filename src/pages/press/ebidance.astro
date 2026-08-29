@@ -1,5 +1,5 @@
 ---
-const title = "エビデンスを追及するエビダンス？！ 15年ぶりに復活した『海底あるある』に、新たな海の仲間が登場";
+const title = "１５年ぶりに復活した『海底あるある』に新キャラ登場！エビデンスを追及するエビダンス？！";
 const description = "カニカニワークスのショートアニメ『海底あるある』の新エピソードでエビダンスを披露します。";
 const publishedAt = "2026.09.01";
 ---
@@ -189,7 +189,7 @@ const publishedAt = "2026.09.01";
 <style>
   :root {
     --font-title: "Zen Maru Gothic", sans-serif;
-    --font-body: "Noto Sans JP", sans-serif;
+    --font-body: "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
     --ink: #333;
     --muted: #747872;
     --paper: #fff;
@@ -211,6 +211,12 @@ const publishedAt = "2026.09.01";
     font-weight: 400;
     letter-spacing: .055em;
   }
+
+  h1,
+.lead {
+  font-variant-east-asian: full-width;
+  font-feature-settings: "fwid" 1;
+}
 
   a { color: inherit; }
 
@@ -267,7 +273,13 @@ const publishedAt = "2026.09.01";
     font-weight: 700;
     letter-spacing: .16em;
   }
-
+.latin-boost {
+  display: inline-block;
+  font-size: 1.1em;
+  line-height: 1;
+  letter-spacing: 0;
+  vertical-align: -.02em;
+}
   h1,
   h2,
   h3 {
@@ -568,7 +580,7 @@ const publishedAt = "2026.09.01";
       gap: 30px;
       margin-top:0px;
       padding-top: 56px;
-      margin-bottom:-90px;
+      margin-bottom:0px;
     }
 
     .status-image {
@@ -605,6 +617,23 @@ const publishedAt = "2026.09.01";
     .press-footer p {
       margin-top: 26px;
     }
+    /* 「平成版と令和版のちがい」周辺だけ余白を縮める */
+.current-status {
+  padding-bottom: 50px;
+}
+
+.current-status + .info-section {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.current-status + .info-section p:last-child {
+  margin-bottom: 0;
+}
+
+.current-status + .info-section + .tiktok-callout {
+  margin-top: 28px;
+}
   }
 
   @media (prefers-reduced-motion: reduce) {
