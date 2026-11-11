@@ -1,0 +1,62 @@
+---
+import { films } from '../data/videos';
+const series = [
+  { id: 'kaitei', name: '海底あるある', image: '/images/01_arar_title.png', description: '平成に21万ダウンロードされた４コマ漫画が令和にショートアニメになって帰ってきた。海の生き物たちの、ゆる〜い日常と不条理な現実。' },
+  { id: 'akutan', name: 'アクタンモクタン', image: '/images/02_akmk_title.png', description: 'ゴミを詠った21首の短歌絵本「アクタンモクタン」より、捨てられたゴミたちの切なくてユーモラスな短歌をまとめたショートアニメ集。' },
+];
+---
+<html lang="ja"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width"/><title>動画ギャラリー | カニカニワークス</title><meta name="description" content="海底あるある・アクタンモクタンのショートアニメを掲載しています。"/><link rel="icon" href="/favicon.svg"/><link rel="canonical" href="https://kanikaniworks.com/gallery/"/><meta property="og:title" content="動画ギャラリー | カニカニワークス"/><meta property="og:image" content="https://kanikaniworks.com/images/ogp.png"/><meta property="og:type" content="website"/><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet"/></head><body>
+<header class="gallery-header"><a href="/">← カニカニワークス トップページ</a></header>
+<nav class="gallery-series-nav" aria-label="作品一覧"><strong>動画ギャラリー</strong><span class="separator" aria-hidden="true">｜</span><a href="#kaitei">海底あるある</a><span class="separator" aria-hidden="true">｜</span><a href="#akutan">アクタンモクタン</a></nav>
+<main class="screening-room">
+{series.map(group => <section id={group.id} class:list={['film-section', group.id]}><div class="series-heading"><h2><img src={group.image} alt={group.name}/></h2><p>{group.description}</p></div><div class="film-grid">{films.filter(f=>f.series===group.id).map(f=><article><button class="film-card" disabled={!f.published || !f.src} data-src={f.src} data-title={f.title} data-caption={f.caption} aria-label={`${f.title}を再生`}><div class="poster"><img src={f.poster} alt="" loading="lazy" width="360" height="640"/><span class="play">{f.published && f.src ? '▶' : '準備中'}</span></div></button><h3>{f.title}</h3></article>)}</div></section>)}
+<aside class="social"><p>上記ショートアニメは以下のSNSでも公開しています。</p><a href="https://www.tiktok.com/@kanikaniworks" target="_blank" rel="noopener noreferrer">海底あるある（TikTok）</a><a href="https://www.instagram.com/kanikaniworks/" target="_blank" rel="noopener noreferrer">アクタンモクタン（Instagram）</a></aside></main><footer class="gallery-footer"><a href="/">← カニカニワークス トップページ</a><p>©kanikaniworks2010-2026</p></footer>
+<dialog id="player-dialog" aria-labelledby="player-title" ><div class="player-shell"><button id="close-player" aria-label="動画を閉じる" autofocus>閉じる ×</button><video id="player" controls playsinline preload="none"></video><h2 id="player-title"></h2><p id="player-error" role="status" hidden>動画を読み込めませんでした。時間をおいてお試しください。</p><div class="player-nav"><button id="previous">← 前の作品</button><button id="next">次の作品 →</button></div></div></dialog>
+</body></html>
+<script>
+const dialog = document.querySelector<HTMLDialogElement>('#player-dialog')!;
+const video = document.querySelector<HTMLVideoElement>('#player')!;
+const cards = Array.from(document.querySelectorAll<HTMLButtonElement>('.film-card:not(:disabled)'));
+const previous = document.querySelector<HTMLButtonElement>('#previous')!;
+const next = document.querySelector<HTMLButtonElement>('#next')!;
+let current = 0;
+let opener: HTMLButtonElement | undefined;
+let oldOverflow = '';
+function showFilm(index: number) {
+  current = index;
+  const card = cards[index];
+  video.pause();
+  document.querySelector('#player-error')!.setAttribute('hidden', '');
+  document.querySelector('#player-title')!.textContent = card.dataset.title!;
+  video.poster = card.querySelector("img")?.src || "";
+  video.src = card.dataset.src!;
+  video.load();
+  previous.disabled = index === 0;
+  next.disabled = index === cards.length - 1;
+  video.play().catch(() => {});
+}
+cards.forEach((card,index)=>card.addEventListener('click',()=>{
+  opener = card;
+  oldOverflow = document.body.style.overflow;
+  dialog.showModal();
+  document.body.style.overflow = 'hidden';
+  showFilm(index);
+}));
+document.querySelector('#close-player')!.addEventListener('click',()=>dialog.close());
+dialog.addEventListener('click',event=>{if(event.target===dialog) {const r=dialog.getBoundingClientRect(); const e=event as MouseEvent;if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom) dialog.close();}});
+dialog.addEventListener('close',()=>{video.pause();video.removeAttribute('src');video.load();document.body.style.overflow=oldOverflow;opener?.focus();});
+video.addEventListener('error',()=>{if(video.hasAttribute('src')) document.querySelector('#player-error')!.removeAttribute('hidden');});
+previous.addEventListener('click',()=>{if(current>0)showFilm(current-1)});
+next.addEventListener('click',()=>{if(current<cards.length-1)showFilm(current+1)});
+</script>
+<style>
+:root{--font-title:"Zen Maru Gothic",sans-serif;--font-body:"Noto Sans JP",sans-serif;--paper:#e1e2de;--ink:#333;--blue:#78c3cc;--pink:#c9c1c1}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);letter-spacing:.06em}a{color:inherit;text-underline-offset:5px}.gallery-header{max-width:1200px;margin:auto;padding:26px 24px;font-size:13px}.gallery-footer{border-top:1px solid #3333}.gallery-header a,.gallery-footer a{display:inline-block;padding:8px 0}
+</style>
+<style>
+.screening-room{max-width:1200px;margin:auto;padding:16px 24px}.intro{text-align:center;padding:0 0 20px}.eyebrow{font-size:14px}h1{margin:8px 0 12px;font-family:var(--font-title);font-size:clamp(28px,4vw,44px);line-height:1.7;font-weight:500}.series-nav{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:30px}a{color:inherit;text-underline-offset:5px}.preview-note{font-size:12px;margin-top:30px}.film-section{padding:40px;border-radius:30px;margin-bottom:36px;scroll-margin-top:30px}.kaitei{background:var(--blue)}.akutan{background:var(--pink)}.series-heading{margin-bottom:32px}.series-heading h2{margin:0;text-align:center}.series-heading img{width:390px;max-width:100%;height:97.5px;object-fit:contain;object-position:center}.series-heading p{font-size:14px;line-height:2;text-align:center}.film-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:28px 20px}.film-card{display:block;width:100%;padding:0;border:0;background:none;cursor:pointer;color:inherit}.film-card:disabled{cursor:default}.poster{aspect-ratio:1/1;background:#f6f4ed;border-radius:15px;position:relative;overflow:hidden;border:1px solid #fff}.poster img{display:block;width:100%;height:100%;object-fit:contain;padding:0}.play{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:#fffE;border-radius:30px;padding:8px 16px;white-space:nowrap;font-size:12px}.film-card:not(:disabled):hover .poster{outline:2px solid #333;outline-offset:3px}button:focus-visible,a:focus-visible{outline:3px solid #333;outline-offset:5px}.film-grid h3{font-family:var(--font-title);font-size:16px;margin:14px 0 8px}.caption{font-size:12px;line-height:1.9;margin:0}.social{text-align:center;padding:24px 0}.social a{display:inline-block;margin:8px 16px}.gallery-footer{max-width:1200px;margin:auto;text-align:left;padding:26px 24px;font-size:13px}.gallery-footer p{text-align:center;font-size:12px}dialog{border:0;border-radius:20px;padding:20px;background:#f3f2ec;color:#333;max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px);width:460px;overflow:auto}dialog::backdrop{background:#142d2fe8}.player-shell{display:flex;flex-direction:column;align-items:center;gap:12px}#close-player{align-self:flex-end}#player{display:block;background:#111;width:auto;max-width:100%;height: min(62dvh,640px);aspect-ratio:9/16}#player-title{font-size:18px;margin:0}#player-caption{font-size:13px;margin:0}.player-nav{display:flex;justify-content:space-between;width:100%}.player-shell button{font:inherit;padding:10px 16px;border:1px solid #777;border-radius:24px;background:white;cursor:pointer}.player-shell button:disabled{opacity:.4;cursor:default}@media(max-width:900px){.film-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:600px){.screening-room{padding:12px 14px}.film-section{padding:24px 16px;border-radius:22px}.film-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 14px}.intro{padding:0 0 16px}.series-nav{gap:16px;font-size:13px}.series-heading img{width:330px}.film-grid h3{font-size:14px}.caption{font-size:11px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+
+<style>
+.gallery-series-nav{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;padding:0 14px 12px;font-size:13px}.gallery-series-nav a{padding:8px 0;text-decoration:underline;text-underline-offset:5px}.gallery-series-nav .separator{opacity:.45}
+</style>
