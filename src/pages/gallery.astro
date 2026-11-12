@@ -11,7 +11,7 @@ const series = [
 <main class="screening-room">
 {series.map(group => <section id={group.id} class:list={['film-section', group.id]}><div class="series-heading"><h2><img src={group.image} alt={group.name}/></h2><p>{group.description}</p></div><div class="film-grid">{films.filter(f=>f.series===group.id).map(f=><article><button class="film-card" disabled={!f.published || !f.src} data-src={f.src} data-title={f.title} data-caption={f.caption} aria-label={`${f.title}を再生`}><div class="poster"><img src={f.poster} alt="" loading="lazy" width="640" height="640"/><span class="play">{f.published && f.src ? '▶' : '準備中'}</span></div></button><h3>{f.title}</h3></article>)}</div></section>)}
 <aside class="social"><p>上記ショートアニメは以下のSNSでも公開しています。</p><a href="https://www.tiktok.com/@kanikaniworks" target="_blank" rel="noopener noreferrer">海底あるある（TikTok）</a><a href="https://www.instagram.com/kanikaniworks/" target="_blank" rel="noopener noreferrer">アクタンモクタン（Instagram）</a></aside></main><footer class="gallery-footer"><a href="/">← カニカニワークス トップページ</a><p>©kanikaniworks2010-2026</p></footer>
-<dialog id="player-dialog" aria-labelledby="player-title" ><div class="player-shell"><button id="close-player" aria-label="動画を閉じる" autofocus>閉じる ×</button><video id="player" controls playsinline preload="none"></video><h2 id="player-title"></h2><p id="player-error" role="status" hidden>動画を読み込めませんでした。時間をおいてお試しください。</p><div class="player-nav"><button id="previous">← 前の作品</button><button id="next">次の作品 →</button></div></div></dialog>
+<dialog id="player-dialog" aria-labelledby="player-title" ><div class="player-shell"><button id="close-player" aria-label="動画を閉じる" autofocus>閉じる ×</button><video id="player" playsinline preload="none" tabindex="0" aria-label="動画。タップすると操作ボタンを表示します"></video><h2 id="player-title"></h2><p id="player-error" role="status" hidden>動画を読み込めませんでした。時間をおいてお試しください。</p><div class="player-nav"><button id="previous">← 前の作品</button><button id="next">次の作品 →</button></div></div></dialog>
 </body></html>
 <script>
 const dialog = document.querySelector<HTMLDialogElement>('#player-dialog')!;
@@ -22,10 +22,49 @@ const next = document.querySelector<HTMLButtonElement>('#next')!;
 let current = 0;
 let opener: HTMLButtonElement | undefined;
 let oldOverflow = '';
+let controlsTimer: ReturnType<typeof setTimeout> | undefined;
+function clearControlsTimer() {
+  if (controlsTimer !== undefined) clearTimeout(controlsTimer);
+  controlsTimer = undefined;
+}
+function revealControls() {
+  clearControlsTimer();
+  video.controls = true;
+  if (!video.paused) controlsTimer = setTimeout(() => {
+    video.controls = false;
+  }, 2500);
+}
+video.addEventListener('playing', () => {
+  clearControlsTimer();
+  video.controls = false;
+});
+video.addEventListener('pause', () => {
+  clearControlsTimer();
+  video.controls = true;
+});
+video.addEventListener('ended', revealControls);
+video.addEventListener('click', (event) => {
+  if (!video.controls) {
+    event.preventDefault();
+    revealControls();
+  }
+});
+video.addEventListener('keydown', (event) => {
+  if (event.key === ' ' || event.key === 'Enter') {
+    event.preventDefault();
+    if (video.paused) video.play().catch(revealControls);
+    else video.pause();
+  } else {
+    clearControlsTimer();
+    video.controls = true;
+  }
+});
 function showFilm(index: number) {
   current = index;
   const card = cards[index];
   video.pause();
+  clearControlsTimer();
+  video.controls = false;
   document.querySelector('#player-error')!.setAttribute('hidden', '');
   document.querySelector('#player-title')!.textContent = card.dataset.title!;
   video.poster = card.querySelector("img")?.src || "";
@@ -33,7 +72,7 @@ function showFilm(index: number) {
   video.load();
   previous.disabled = index === 0;
   next.disabled = index === cards.length - 1;
-  video.play().catch(() => {});
+  video.play().catch(revealControls);
 }
 cards.forEach((card,index)=>card.addEventListener('click',()=>{
   opener = card;
@@ -44,7 +83,7 @@ cards.forEach((card,index)=>card.addEventListener('click',()=>{
 }));
 document.querySelector('#close-player')!.addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',event=>{if(event.target===dialog) {const r=dialog.getBoundingClientRect(); const e=event as MouseEvent;if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom) dialog.close();}});
-dialog.addEventListener('close',()=>{video.pause();video.removeAttribute('src');video.load();document.body.style.overflow=oldOverflow;opener?.focus();});
+dialog.addEventListener('close',()=>{video.pause();clearControlsTimer();video.removeAttribute('src');video.load();document.body.style.overflow=oldOverflow;opener?.focus();});
 video.addEventListener('error',()=>{if(video.hasAttribute('src')) document.querySelector('#player-error')!.removeAttribute('hidden');});
 previous.addEventListener('click',()=>{if(current>0)showFilm(current-1)});
 next.addEventListener('click',()=>{if(current<cards.length-1)showFilm(current+1)});
